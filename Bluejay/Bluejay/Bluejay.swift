@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
+#endif
 import CoreBluetooth
 
 /**
@@ -70,8 +72,10 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     /// Determines whether Bluejay is currently performing state restoration.
     private var isRestoring = false
 
+    #if os(iOS)
     /// Reference to the startup, **not Bluejay**, background task used for supporting state restoration.
     private var startupBackgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
+    #endif
 
     /// True when Bluejay, **not startup**, background task is running, and helps prevent calling regular read/write/listen.
     private var isRunningBackgroundTask = false
@@ -252,12 +256,14 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
             }
 
             if isRestoring {
+                #if os(iOS)
                 debugLog("Begin startup background task for restoring CoreBluetooth.")
                 startupBackgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
                     self.cancelEverything(error: BluejayError.startupBackgroundTaskExpired, shouldDisconnect: false)
                 })
+                #endif
             }
-
+            
             cbCentralManager = CBCentralManager(
                 delegate: self,
                 queue: .main,
@@ -947,10 +953,10 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     }
 
     private func endStartupBackgroundTask() {
-        if startupBackgroundTask != UIBackgroundTaskIdentifier.invalid {
-            debugLog("Ending startup background task.")
-            UIApplication.shared.endBackgroundTask(convertToUIBackgroundTaskIdentifier(startupBackgroundTask.rawValue))
-        }
+//        if startupBackgroundTask != UIBackgroundTaskIdentifier.invalid {
+//            debugLog("Ending startup background task.")
+//            UIApplication.shared.endBackgroundTask(convertToUIBackgroundTaskIdentifier(startupBackgroundTask.rawValue))
+//        }
 
         clearAllRestorationPeripherals()
 
@@ -1479,8 +1485,10 @@ extension Bluejay: PeripheralDelegate {
     }
 }
 
+#if os(iOS)
 // Helper function inserted by Swift 4.2 migrator.
 private func convertToUIBackgroundTaskIdentifier(_ input: Int) -> UIBackgroundTaskIdentifier {
     return UIBackgroundTaskIdentifier(rawValue: input)
 }
+#endif
 //swiftlint:disable:this file_length

@@ -8,7 +8,9 @@
 
 import CoreBluetooth
 import Foundation
+#if os(iOS)
 import UIKit
+#endif
 
 /// A scan operation.
 class Scan: Queueable {
@@ -109,23 +111,23 @@ class Scan: Queueable {
 
         manager.scanForPeripherals(withServices: services, options: [CBCentralManagerScanOptionAllowDuplicatesKey: allowDuplicates])
 
-        if allowDuplicates {
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(didEnterBackgroundWithAllowDuplicates),
-                name: UIApplication.didEnterBackgroundNotification,
-                object: nil
-            )
-        }
-
-        if serviceIdentifiers == nil {
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(didEnterBackgroundWithoutServiceIdentifiers),
-                name: UIApplication.didEnterBackgroundNotification,
-                object: nil
-            )
-        }
+//        if allowDuplicates {
+//            NotificationCenter.default.addObserver(
+//                self,
+//                selector: #selector(didEnterBackgroundWithAllowDuplicates),
+//                name: UIApplication.didEnterBackgroundNotification,
+//                object: nil
+//            )
+//        }
+//
+//        if serviceIdentifiers == nil {
+//            NotificationCenter.default.addObserver(
+//                self,
+//                selector: #selector(didEnterBackgroundWithoutServiceIdentifiers),
+//                name: UIApplication.didEnterBackgroundNotification,
+//                object: nil
+//            )
+//        }
 
         debugLog("Scanning started.")
     }

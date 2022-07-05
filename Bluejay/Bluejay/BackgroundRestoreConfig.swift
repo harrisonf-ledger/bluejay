@@ -7,7 +7,12 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
+
 
 /// Contains all required configurations for background restoration.
 public struct BackgroundRestoreConfig {
@@ -25,7 +30,11 @@ public struct BackgroundRestoreConfig {
 
     /// Convenience return of bluetooth central keys from the launch options.
     public var centralKeys: [String]? {
+#if os(iOS)
         return launchOptions?[UIApplication.LaunchOptionsKey.bluetoothCentrals] as? [String]
+#elseif os(macOS)
+        return nil
+#endif
     }
 
     /// If CoreBluetooth is restoring from background, the bluetooth central keys from launch options will contain the designated restore identifier.
@@ -62,4 +71,8 @@ public struct BackgroundRestoreConfig {
 public typealias RestoreIdentifier = String
 
 /// An alias to make it clearer that the dictionary should be the launch options from `UIApplicationDelegate`.
+#if os(iOS)
 public typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]?
+#else
+public typealias LaunchOptions = [NSWorkspace.OpenConfiguration: Any]?
+#endif

@@ -7,7 +7,10 @@
 //
 
 import Foundation
+
+#if os(iOS)
 import UIKit
+
 
 /**
  * Protocol for handling a listen event that does not have a callback due to background restoration.
@@ -27,6 +30,17 @@ public protocol ListenRestorer: UIApplicationDelegate {
         on characteristic: CharacteristicIdentifier,
         with value: Data?) -> ListenRestoreAction
 }
+#elseif os(macOS)
+
+import AppKit
+public protocol ListenRestorer: NSApplicationDelegate {
+    func didReceiveUnhandledListen(
+        from peripheral: PeripheralIdentifier,
+        on characteristic: CharacteristicIdentifier,
+        with value: Data?) -> ListenRestoreAction
+}
+
+#endif
 
 /**
  * Available actions to take on an unhandled listen event from background restoration.

@@ -7,19 +7,30 @@
 //
 
 import Foundation
-import UIKit
 
 /**
  * Protocols for handling the results of a background restoration.
  *
  * - Important: The delegate must be an `UIApplicationDelegate` in order to properly support background restoration during `didFinishLaunchingWithOptions`.
  */
+
+#if os(iOS)
+import UIKit
 public protocol BackgroundRestorer: UIApplicationDelegate {
     /// Bluejay was able to restore a connection.
     func didRestoreConnection(to peripheral: PeripheralIdentifier) -> BackgroundRestoreCompletion
     /// Bluejay failed to restore a connection.
     func didFailToRestoreConnection(to peripheral: PeripheralIdentifier, error: Error) -> BackgroundRestoreCompletion
 }
+#else
+import AppKit
+public protocol BackgroundRestorer: NSApplicationDelegate {
+    /// Bluejay was able to restore a connection.
+    func didRestoreConnection(to peripheral: PeripheralIdentifier) -> BackgroundRestoreCompletion
+    /// Bluejay failed to restore a connection.
+    func didFailToRestoreConnection(to peripheral: PeripheralIdentifier, error: Error) -> BackgroundRestoreCompletion
+}
+#endif
 
 /**
  * Allows capturing further Bluejay operations to be queued and executed after background restoration is completed.

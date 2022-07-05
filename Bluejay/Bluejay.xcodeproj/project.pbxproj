@@ -10,6 +10,62 @@
 		2F74765D212E95F800D74B87 /* WarningOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74765C212E95F800D74B87 /* WarningOptions.swift */; };
 		3B53B16E1014E47D8AF3BBDC /* Pods_BluejayHeartSensorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82FE820DEBA78205D73DB03 /* Pods_BluejayHeartSensorDemo.framework */; };
 		7677FF3A64A35BBC9125A87E /* Pods_Bluejay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1460DB02323E612C0106BFE7 /* Pods_Bluejay.framework */; };
+		844A5766287416AA004C3197 /* Bluejay_macOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 844A5765287416AA004C3197 /* Bluejay_macOS.docc */; };
+		844A5767287416AA004C3197 /* Bluejay_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 844A5764287416AA004C3197 /* Bluejay_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		844A576B287416DC004C3197 /* Bluejay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F8F1E1C505C0006CF58 /* Bluejay.swift */; };
+		844A576C287416DC004C3197 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F961E1C5A4F0006CF58 /* Error.swift */; };
+		844A576D287416DC004C3197 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8383B7121C3239B00F07306 /* PeripheralDelegate.swift */; };
+		844A576E287416DC004C3197 /* Peripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FBC1E1C7DB60006CF58 /* Peripheral.swift */; };
+		844A576F287416DC004C3197 /* SynchronizedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D991E1F041D00EA360B /* SynchronizedPeripheral.swift */; };
+		844A5770287416DC004C3197 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89AA4781E302114006BA376 /* Queue.swift */; };
+		844A5771287416DC004C3197 /* Queueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83271A81E313CA300D68581 /* Queueable.swift */; };
+		844A5772287416DC004C3197 /* QueueableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FC01E1C80150006CF58 /* QueueableState.swift */; };
+		844A5773287416DC004C3197 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0D9B1E1DAA1600A00FF8 /* Event.swift */; };
+		844A5774287416DC004C3197 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89AA4871E30373D006BA376 /* Scan.swift */; };
+		844A5775287416DC004C3197 /* ScanAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5E7121E64D6860094A708 /* ScanAction.swift */; };
+		844A5776287416DC004C3197 /* ScanDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5E7141E64D93C0094A708 /* ScanDiscovery.swift */; };
+		844A5777287416DC004C3197 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89AA4831E303634006BA376 /* Connection.swift */; };
+		844A5778287416DC004C3197 /* Disconnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F8C0EC1E4E7CA300A0D0F7 /* Disconnection.swift */; };
+		844A5779287416DC004C3197 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FA21E1C65000006CF58 /* ConnectionResult.swift */; };
+		844A577A287416DC004C3197 /* DisconnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81E37721EDE238900E0655F /* DisconnectionResult.swift */; };
+		844A577B287416DC004C3197 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F79941EB7DB420094D8D1 /* Operation.swift */; };
+		844A577C287416DC004C3197 /* DiscoverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0D9E1E1DCFBF00A00FF8 /* DiscoverService.swift */; };
+		844A577D287416DC004C3197 /* DiscoverCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0DA01E1DD15600A00FF8 /* DiscoverCharacteristic.swift */; };
+		844A577E287416DC004C3197 /* DiscoveryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A947481EB93B5800347FF5 /* DiscoveryResult.swift */; };
+		844A577F287416DC004C3197 /* ReadCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0DA21E1DD18B00A00FF8 /* ReadCharacteristic.swift */; };
+		844A5780287416DC004C3197 /* ReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FA41E1C65A20006CF58 /* ReadResult.swift */; };
+		844A5781287416DC004C3197 /* WriteCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0DA41E1DD1A200A00FF8 /* WriteCharacteristic.swift */; };
+		844A5782287416DC004C3197 /* WriteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D971E1EEED900EA360B /* WriteResult.swift */; };
+		844A5783287416DC004C3197 /* ListenCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A0DA61E1DD1DE00A00FF8 /* ListenCharacteristic.swift */; };
+		844A5784287416DC004C3197 /* ListenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D9B1E1F052F00EA360B /* ListenAction.swift */; };
+		844A5785287416DC004C3197 /* ListenCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8330D5021B9E03B006F29C7 /* ListenCallback.swift */; };
+		844A5786287416DC004C3197 /* MultipleListenOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9684821B5DDB900905896 /* MultipleListenOption.swift */; };
+		844A5787287416DC004C3197 /* RunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9B3961EE0A724007519B0 /* RunResult.swift */; };
+		844A5788287416DC004C3197 /* BackgroundRestoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9B3981EE0BDD0007519B0 /* BackgroundRestoreMode.swift */; };
+		844A5789287416DC004C3197 /* BackgroundRestoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CBB4C21C05F8400B67B5B /* BackgroundRestoreConfig.swift */; };
+		844A578A287416DC004C3197 /* BackgroundRestorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A67CD219F45C300076B9F /* BackgroundRestorer.swift */; };
+		844A578B287416DC004C3197 /* ListenRestorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8383B6F21C31B2D00F07306 /* ListenRestorer.swift */; };
+		844A578C287416DC004C3197 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FAA1E1C69C50006CF58 /* Sendable.swift */; };
+		844A578D287416DC004C3197 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FA81E1C69B60006CF58 /* Receivable.swift */; };
+		844A578E287416DC004C3197 /* Integer+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FAE1E1C6C780006CF58 /* Integer+Transferable.swift */; };
+		844A578F287416DC004C3197 /* String+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842AAF71E4CF74300BB32EE /* String+Transferable.swift */; };
+		844A5790287416DC004C3197 /* Data+Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869A2961E721D50003C1278 /* Data+Sendable.swift */; };
+		844A5791287416DC004C3197 /* Data+Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5708E1ED8AEAA00603C0B /* Data+Extractable.swift */; };
+		844A5792287416DC004C3197 /* ConnectionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FB81E1C725C0006CF58 /* ConnectionObserver.swift */; };
+		844A5793287416DC004C3197 /* RSSIObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE9DF41E73597A00D361CE /* RSSIObserver.swift */; };
+		844A5794287416DC004C3197 /* ServiceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843657D221F73FC00990C83 /* ServiceObserver.swift */; };
+		844A5795287416DC004C3197 /* LogObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC6C6D21DD7917004A8EA6 /* LogObserver.swift */; };
+		844A5796287416DC004C3197 /* DisconnectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80D299A2170062D001C3C9B /* DisconnectHandler.swift */; };
+		844A5797287416DC004C3197 /* StartOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86586A8216D1105002E8E2D /* StartOptions.swift */; };
+		844A5798287416DC004C3197 /* WarningOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F74765C212E95F800D74B87 /* WarningOptions.swift */; };
+		844A5799287416DC004C3197 /* ServiceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F981E1C5A7F0006CF58 /* ServiceIdentifier.swift */; };
+		844A579A287416DC004C3197 /* CharacteristicIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F9A1E1C5A910006CF58 /* CharacteristicIdentifier.swift */; };
+		844A579B287416DC004C3197 /* PeripheralIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F9F1E1C61BD0006CF58 /* PeripheralIdentifier.swift */; };
+		844A579C287416DC004C3197 /* DataPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70FB01E1C6F150006CF58 /* DataPadding.swift */; };
+		844A579D287416DC004C3197 /* CBPeripheral+FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F911E1C56330006CF58 /* CBPeripheral+FindService.swift */; };
+		844A579E287416DC004C3197 /* CBPeripheralState+ReturnString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2078B1E26D446007E670A /* CBPeripheralState+ReturnString.swift */; };
+		844A579F287416DC004C3197 /* CBManagerState+ReturnString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2078D1E26D702007E670A /* CBManagerState+ReturnString.swift */; };
+		844A57A0287416DC004C3197 /* CBService+FindCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70F941E1C57250006CF58 /* CBService+FindCharacteristic.swift */; };
 		B8022D981E1EEED900EA360B /* WriteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D971E1EEED900EA360B /* WriteResult.swift */; };
 		B8022D9A1E1F041D00EA360B /* SynchronizedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D991E1F041D00EA360B /* SynchronizedPeripheral.swift */; };
 		B8022D9C1E1F052F00EA360B /* ListenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8022D9B1E1F052F00EA360B /* ListenAction.swift */; };
@@ -132,6 +188,9 @@
 		2F74765C212E95F800D74B87 /* WarningOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningOptions.swift; sourceTree = "<group>"; };
 		6D73B082C20E892DBC931F5D /* Pods-BluejayHeartSensorDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluejayHeartSensorDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluejayHeartSensorDemo/Pods-BluejayHeartSensorDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6D8D558D0951A33AECAED2CE /* Pods-BluejayHeartSensorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluejayHeartSensorDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluejayHeartSensorDemo/Pods-BluejayHeartSensorDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		844A5762287416AA004C3197 /* Bluejay_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bluejay_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844A5764287416AA004C3197 /* Bluejay_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bluejay_macOS.h; sourceTree = "<group>"; };
+		844A5765287416AA004C3197 /* Bluejay_macOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Bluejay_macOS.docc; sourceTree = "<group>"; };
 		916C6338CC4E6D8DBA1A561C /* Pods-Bluejay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluejay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bluejay/Pods-Bluejay.debug.xcconfig"; sourceTree = "<group>"; };
 		991CB1FE3605BDCF2951EEF8 /* Pods-DittojayHeartSensorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DittojayHeartSensorDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DittojayHeartSensorDemo/Pods-DittojayHeartSensorDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F875274536E6A2FACE6253 /* Pods_DittojayHeartSensorDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DittojayHeartSensorDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +275,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		844A575F287416AA004C3197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8383B5A21C3162800F07306 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +322,15 @@
 				DF2D4A8FB079296042210FA7 /* Pods-DittojayHeartSensorDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		844A5763287416AA004C3197 /* Bluejay-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				844A5764287416AA004C3197 /* Bluejay_macOS.h */,
+				844A5765287416AA004C3197 /* Bluejay_macOS.docc */,
+			);
+			path = "Bluejay-macOS";
 			sourceTree = "<group>";
 		};
 		B8046D0021CD730F005A58A2 /* Serialization and Deserialization */ = {
@@ -389,6 +464,7 @@
 				B8C70F771E1C22850006CF58 /* Bluejay */,
 				B8383B5E21C3162800F07306 /* BluejayHeartSensorDemo */,
 				B87FDD5F21E567150010D6CF /* DittojayHeartSensorDemo */,
+				844A5763287416AA004C3197 /* Bluejay-macOS */,
 				B8C70F761E1C22850006CF58 /* Products */,
 				B8C70F9C1E1C5AD80006CF58 /* Frameworks */,
 				715085F1986E94D0C3C78D72 /* Pods */,
@@ -401,6 +477,7 @@
 				B8C70F751E1C22850006CF58 /* Bluejay.framework */,
 				B8383B5D21C3162800F07306 /* BluejayHeartSensorDemo.app */,
 				B87FDD5E21E567150010D6CF /* DittojayHeartSensorDemo.app */,
+				844A5762287416AA004C3197 /* Bluejay_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,6 +560,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		844A575D287416AA004C3197 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A5767287416AA004C3197 /* Bluejay_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8C70F721E1C22850006CF58 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +579,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		844A5761287416AA004C3197 /* Bluejay-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844A5768287416AA004C3197 /* Build configuration list for PBXNativeTarget "Bluejay-macOS" */;
+			buildPhases = (
+				844A575D287416AA004C3197 /* Headers */,
+				844A575E287416AA004C3197 /* Sources */,
+				844A575F287416AA004C3197 /* Frameworks */,
+				844A5760287416AA004C3197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bluejay-macOS";
+			productName = "Bluejay-macOS";
+			productReference = 844A5762287416AA004C3197 /* Bluejay_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B8383B5C21C3162800F07306 /* BluejayHeartSensorDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8383B6E21C3162A00F07306 /* Build configuration list for PBXNativeTarget "BluejayHeartSensorDemo" */;
@@ -564,6 +667,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Steamclock Software";
 				TargetAttributes = {
+					844A5761287416AA004C3197 = {
+						CreatedOnToolsVersion = 13.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					B8383B5C21C3162800F07306 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = GH868RP95T;
@@ -588,7 +695,7 @@
 					};
 					B8C70F741E1C22850006CF58 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GH868RP95T;
+						DevelopmentTeam = U4SVP5B2Q3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -610,11 +717,19 @@
 				B8C70F741E1C22850006CF58 /* Bluejay */,
 				B8383B5C21C3162800F07306 /* BluejayHeartSensorDemo */,
 				B87FDD5D21E567150010D6CF /* DittojayHeartSensorDemo */,
+				844A5761287416AA004C3197 /* Bluejay-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		844A5760287416AA004C3197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8383B5B21C3162800F07306 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -715,6 +830,68 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		844A575E287416AA004C3197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A576B287416DC004C3197 /* Bluejay.swift in Sources */,
+				844A576C287416DC004C3197 /* Error.swift in Sources */,
+				844A576D287416DC004C3197 /* PeripheralDelegate.swift in Sources */,
+				844A576E287416DC004C3197 /* Peripheral.swift in Sources */,
+				844A576F287416DC004C3197 /* SynchronizedPeripheral.swift in Sources */,
+				844A5770287416DC004C3197 /* Queue.swift in Sources */,
+				844A5771287416DC004C3197 /* Queueable.swift in Sources */,
+				844A5772287416DC004C3197 /* QueueableState.swift in Sources */,
+				844A5773287416DC004C3197 /* Event.swift in Sources */,
+				844A5774287416DC004C3197 /* Scan.swift in Sources */,
+				844A5775287416DC004C3197 /* ScanAction.swift in Sources */,
+				844A5776287416DC004C3197 /* ScanDiscovery.swift in Sources */,
+				844A5777287416DC004C3197 /* Connection.swift in Sources */,
+				844A5778287416DC004C3197 /* Disconnection.swift in Sources */,
+				844A5779287416DC004C3197 /* ConnectionResult.swift in Sources */,
+				844A577A287416DC004C3197 /* DisconnectionResult.swift in Sources */,
+				844A577B287416DC004C3197 /* Operation.swift in Sources */,
+				844A577C287416DC004C3197 /* DiscoverService.swift in Sources */,
+				844A577D287416DC004C3197 /* DiscoverCharacteristic.swift in Sources */,
+				844A577E287416DC004C3197 /* DiscoveryResult.swift in Sources */,
+				844A577F287416DC004C3197 /* ReadCharacteristic.swift in Sources */,
+				844A5780287416DC004C3197 /* ReadResult.swift in Sources */,
+				844A5781287416DC004C3197 /* WriteCharacteristic.swift in Sources */,
+				844A5782287416DC004C3197 /* WriteResult.swift in Sources */,
+				844A5783287416DC004C3197 /* ListenCharacteristic.swift in Sources */,
+				844A5784287416DC004C3197 /* ListenAction.swift in Sources */,
+				844A5785287416DC004C3197 /* ListenCallback.swift in Sources */,
+				844A5786287416DC004C3197 /* MultipleListenOption.swift in Sources */,
+				844A5787287416DC004C3197 /* RunResult.swift in Sources */,
+				844A5788287416DC004C3197 /* BackgroundRestoreMode.swift in Sources */,
+				844A5789287416DC004C3197 /* BackgroundRestoreConfig.swift in Sources */,
+				844A578A287416DC004C3197 /* BackgroundRestorer.swift in Sources */,
+				844A578B287416DC004C3197 /* ListenRestorer.swift in Sources */,
+				844A578C287416DC004C3197 /* Sendable.swift in Sources */,
+				844A578D287416DC004C3197 /* Receivable.swift in Sources */,
+				844A578E287416DC004C3197 /* Integer+Transferable.swift in Sources */,
+				844A578F287416DC004C3197 /* String+Transferable.swift in Sources */,
+				844A5790287416DC004C3197 /* Data+Sendable.swift in Sources */,
+				844A5791287416DC004C3197 /* Data+Extractable.swift in Sources */,
+				844A5792287416DC004C3197 /* ConnectionObserver.swift in Sources */,
+				844A5793287416DC004C3197 /* RSSIObserver.swift in Sources */,
+				844A5794287416DC004C3197 /* ServiceObserver.swift in Sources */,
+				844A5795287416DC004C3197 /* LogObserver.swift in Sources */,
+				844A5796287416DC004C3197 /* DisconnectHandler.swift in Sources */,
+				844A5797287416DC004C3197 /* StartOptions.swift in Sources */,
+				844A5798287416DC004C3197 /* WarningOptions.swift in Sources */,
+				844A5799287416DC004C3197 /* ServiceIdentifier.swift in Sources */,
+				844A579A287416DC004C3197 /* CharacteristicIdentifier.swift in Sources */,
+				844A579B287416DC004C3197 /* PeripheralIdentifier.swift in Sources */,
+				844A579C287416DC004C3197 /* DataPadding.swift in Sources */,
+				844A579D287416DC004C3197 /* CBPeripheral+FindService.swift in Sources */,
+				844A579E287416DC004C3197 /* CBPeripheralState+ReturnString.swift in Sources */,
+				844A579F287416DC004C3197 /* CBManagerState+ReturnString.swift in Sources */,
+				844A57A0287416DC004C3197 /* CBService+FindCharacteristic.swift in Sources */,
+				844A5766287416AA004C3197 /* Bluejay_macOS.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8383B5921C3162800F07306 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -849,6 +1026,71 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		844A5769287416AA004C3197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Steamclock Software. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.steamclock.Bluejay.Bluejay-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		844A576A287416AA004C3197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Steamclock Software. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.steamclock.Bluejay.Bluejay-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		B8383B6C21C3162A00F07306 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D8D558D0951A33AECAED2CE /* Pods-BluejayHeartSensorDemo.debug.xcconfig */;
@@ -1076,7 +1318,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GH868RP95T;
+				DEVELOPMENT_TEAM = U4SVP5B2Q3;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1103,7 +1345,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GH868RP95T;
+				DEVELOPMENT_TEAM = U4SVP5B2Q3;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1124,6 +1366,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		844A5768287416AA004C3197 /* Build configuration list for PBXNativeTarget "Bluejay-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844A5769287416AA004C3197 /* Debug */,
+				844A576A287416AA004C3197 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B8383B6E21C3162A00F07306 /* Build configuration list for PBXNativeTarget "BluejayHeartSensorDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
