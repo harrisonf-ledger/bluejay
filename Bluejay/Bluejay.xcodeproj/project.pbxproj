@@ -539,9 +539,9 @@
 			buildConfigurationList = B8C70F891E1C22850006CF58 /* Build configuration list for PBXNativeTarget "Bluejay" */;
 			buildPhases = (
 				E74B2676FBABC2E126DD9A0D /* [CP] Check Pods Manifest.lock */,
+				B8C70F721E1C22850006CF58 /* Headers */,
 				B8C70F701E1C22850006CF58 /* Sources */,
 				B8C70F711E1C22850006CF58 /* Frameworks */,
-				B8C70F721E1C22850006CF58 /* Headers */,
 				B8C70F731E1C22850006CF58 /* Resources */,
 				B8F72762219114DC00286236 /* ShellScript */,
 			);
@@ -1091,7 +1091,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1117,7 +1117,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
