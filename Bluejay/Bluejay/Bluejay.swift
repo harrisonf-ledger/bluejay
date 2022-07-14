@@ -953,10 +953,12 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     }
 
     private func endStartupBackgroundTask() {
-//        if startupBackgroundTask != UIBackgroundTaskIdentifier.invalid {
-//            debugLog("Ending startup background task.")
-//            UIApplication.shared.endBackgroundTask(convertToUIBackgroundTaskIdentifier(startupBackgroundTask.rawValue))
-//        }
+        #if os(iOS)
+        if startupBackgroundTask != UIBackgroundTaskIdentifier.invalid {
+            debugLog("Ending startup background task.")
+            UIApplication.shared.endBackgroundTask(convertToUIBackgroundTaskIdentifier(startupBackgroundTask.rawValue))
+        }
+        #endif
 
         clearAllRestorationPeripherals()
 
