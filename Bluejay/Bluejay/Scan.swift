@@ -46,7 +46,7 @@ class Scan: Queueable {
     private let expired: ((ScanDiscovery, [ScanDiscovery]) -> ScanAction)?
 
     /// The stopped callback. Called when stopped normally as well, not just when there is an error.
-    private let stopped: ([ScanDiscovery], Error?) -> Void
+    private let stopped: ([ScanDiscovery], Error?, Bool) -> Void
 
     /// The discoveries made so far in a given scan session.
     private var discoveries = [ScanDiscovery]()
@@ -63,7 +63,7 @@ class Scan: Queueable {
          serviceIdentifiers: [ServiceIdentifier]?,
          discovery: @escaping (ScanDiscovery, [ScanDiscovery]) -> ScanAction,
          expired: ((ScanDiscovery, [ScanDiscovery]) -> ScanAction)?,
-         stopped: @escaping ([ScanDiscovery], Error?) -> Void,
+         stopped: @escaping ([ScanDiscovery], Error?, Bool) -> Void,
          manager: CBCentralManager) {
         self.state = .notStarted
 
@@ -180,10 +180,10 @@ class Scan: Queueable {
 
             if case .stop = discovery(newDiscovery, discoveries) {
                 state = .completed
-                stopScan(with: discoveries, error: nil)
+                stopScan(with: discoveries, error: nil, timedOut: false)
             } else if case .connect(let discovery, let timeout, let warningOptions, let completion) = discovery(newDiscovery, discoveries) {
                 state = .completed
-                stopScan(with: discoveries, error: nil)
+                stopScan(with: discoveries, error: nil, timedOut: false)
 
                 if let queue = queue {
                     if let cbPeripheral = manager.retrievePeripherals(withIdentifiers: [discovery.peripheralIdentifier.uuid]).first {
@@ -208,12 +208,12 @@ class Scan: Queueable {
 
     func stop() {
         state = .completed
-        stopScan(with: discoveries, error: nil)
+        stopScan(with: discoveries, error: nil, timedOut: false)
     }
 
     func fail(_ error: Error) {
         state = .failed(error)
-        stopScan(with: discoveries, error: error)
+        stopScan(with: discoveries, error: error, timedOut: false)
     }
 
     @objc func didEnterBackgroundWithAllowDuplicates() {
@@ -224,7 +224,7 @@ class Scan: Queueable {
         fail(BluejayError.missingServiceIdentifiersInBackground)
     }
 
-    private func stopScan(with discoveries: [ScanDiscovery], error: Error?) {
+    private func stopScan(with discoveries: [ScanDiscovery], error: Error?, timedOut: Bool) {
         clearTimers()
 
         // There is no point trying to stop the scan if Bluetooth off, as trying to do so has no effect and will also cause CoreBluetooth to log an "API MISUSE" warning.
@@ -238,7 +238,7 @@ class Scan: Queueable {
             debugLog("Scanning stopped.")
         }
 
-        stopped(discoveries, error)
+        stopped(discoveries, error, timedOut)
 
         // swiftlint:disable:next notification_center_detachment
         NotificationCenter.default.removeObserver(self)
@@ -286,7 +286,7 @@ class Scan: Queueable {
                         self.manager.stopScan()
                         self.state = .completed
 
-                        self.stopped(self.discoveries, nil)
+                        self.stopped(self.discoveries, nil, false)
                     }
                 }
             }
@@ -322,7 +322,7 @@ class Scan: Queueable {
 
             debugLog("Finished scanning on timeout.")
 
-            stopScan(with: discoveries, error: nil)
+            stopScan(with: discoveries, error: nil, timedOut: true)
         }
     }
 

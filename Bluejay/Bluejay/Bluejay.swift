@@ -494,12 +494,12 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
         serviceIdentifiers: [ServiceIdentifier]?,
         discovery: @escaping (ScanDiscovery, [ScanDiscovery]) -> ScanAction,
         expired: ((ScanDiscovery, [ScanDiscovery]) -> ScanAction)? = nil,
-        stopped: @escaping ([ScanDiscovery], Error?) -> Void
+        stopped: @escaping ([ScanDiscovery], Error?, Bool) -> Void
         ) {
         Dispatch.dispatchPrecondition(condition: .onQueue(.main))
 
         if isRunningBackgroundTask {
-            stopped([], BluejayError.backgroundTaskRunning)
+            stopped([], BluejayError.backgroundTaskRunning, false)
             return
         }
 
