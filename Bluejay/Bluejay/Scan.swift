@@ -112,14 +112,14 @@ class Scan: Queueable {
         manager.scanForPeripherals(withServices: services, options: [CBCentralManagerScanOptionAllowDuplicatesKey: allowDuplicates])
 
         #if os(iOS)
-        if allowDuplicates {
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(didEnterBackgroundWithAllowDuplicates),
-                name: UIApplication.didEnterBackgroundNotification,
-                object: nil
-            )
-        }
+//        if allowDuplicates {
+//            NotificationCenter.default.addObserver(
+//                self,
+//                selector: #selector(didEnterBackgroundWithAllowDuplicates),
+//                name: UIApplication.didEnterBackgroundNotification,
+//                object: nil
+//            )
+//        }
 
         if serviceIdentifiers == nil {
             NotificationCenter.default.addObserver(
